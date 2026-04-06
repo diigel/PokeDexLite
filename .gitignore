@@ -1,0 +1,48 @@
+# --- [ Built objects ] ---
+bin/
+gen/
+out/
+build/
+.gradle/
+app/build/
+
+# --- [ Kotlin / KSP ] ---
+.kotlin/
+kotlin-daemon-embeddable-*.jar
+
+# --- [ Android Studio / IntelliJ ] ---
+.idea/
+*.iml
+*.iws
+*.ipr
+.navigation/
+captures/
+.externalNativeBuild/
+.cxx/
+cmake/
+
+# --- [ Local Configuration (SANGAT PENTING) ] ---
+# Jangan upload path SDK lokal Anda
+local.properties
+
+# --- [ Signing files (KEAMANAN) ] ---
+# Jangan pernah upload keystore ke Git!
+*.jks
+*.keystore
+*.pk8
+*.p12
+google-services.json
+
+# --- [ OS Cache ] ---
+.DS_Store
+Thumbs.db
+
+# --- [ Log & Testing ] ---
+*.log
+captures/
+screenshots/
+
+# --- [ Gradle Wrapper ] ---
+# Kita biarkan jar dan properties agar orang lain bisa build tanpa instal Gradle manual
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties

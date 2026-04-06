@@ -28,10 +28,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val startDestination = if (sessionManager.isLoggedIn()) {
-                        Screen.Main.route
+                    val startDestination: Any = if (sessionManager.isLoggedIn()) {
+                        Screen.Main
                     } else {
-                        Screen.Login.route
+                        Screen.Login
                     }
                     NavGraph(startDestination = startDestination)
                 }
