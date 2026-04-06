@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">PokeDex Lite</string>
+    <string name="login_title">🎮 PokéDex Lite</string>
+    <string name="login_welcome">Welcome back, Trainer!</string>
+    <string name="label_username">Username</string>
+    <string name="label_password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="text_no_account">Don\'t have an account?</string>
+    <string name="btn_register">Register</string>
+    <string name="register_subtitle">Create your Trainer account</string>
+    <string name="label_email">Email</string>
+    <string name="label_confirm_password">Confirm Password</string>
+    <string name="error_password_mismatch">Passwords do not match</string>
+    <string name="btn_create_account">Create Account</string>
+    <string name="text_already_have_account">Already have an account?</string>
+</resources>
