@@ -1,3 +1,0 @@
-com.example.pokedexlite.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme

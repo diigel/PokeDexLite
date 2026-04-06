@@ -1,6 +1,0 @@
-com.example.pokedexlite.test.app-core-1.5.0-0 C:\Users\dhani\.gradle\caches\transforms-4\5101cbf2d9ea9e704fd7e5f2ebe4c0cb\transformed\core-1.5.0\res
-com.example.pokedexlite.test.app-annotation-experimental-1.4.0-1 C:\Users\dhani\.gradle\caches\transforms-4\fb9231b82fe7327399ce2a4698f67cb0\transformed\annotation-experimental-1.4.0\res
-com.example.pokedexlite.test.app-androidTest-2 C:\Users\dhani\AndroidStudioProjects\PokeDexLite\app\build\generated\res\resValues\androidTest\debug
-com.example.pokedexlite.test.app-mergeDebugAndroidTestResources-3 C:\Users\dhani\AndroidStudioProjects\PokeDexLite\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.example.pokedexlite.test.app-mergeDebugAndroidTestResources-4 C:\Users\dhani\AndroidStudioProjects\PokeDexLite\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.example.pokedexlite.test.app-debugAndroidTest-5 C:\Users\dhani\AndroidStudioProjects\PokeDexLite\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
