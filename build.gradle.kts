@@ -1,7 +1,23 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
-    id("com.android.application") version "8.3.2" apply false
-    id("org.jetbrains.kotlin.android") version "1.9.23" apply false
-    id("com.google.dagger.hilt.android") version "2.51.1" apply false
-    id("com.google.devtools.ksp") version "1.9.23-1.0.20" apply false
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.hilt) apply false
+    alias(libs.plugins.ksp) apply false
+    alias(libs.plugins.compose.compiler) apply false
+}
+
+// build.gradle.kts (Project Level)
+allprojects {
+    configurations.all {
+        resolutionStrategy.eachDependency {
+            if (requested.group == "org.jetbrains.kotlin") {
+                useVersion("2.1.10")
+            }
+            // Tambahkan ini juga untuk KSP
+            if (requested.group == "com.google.devtools.ksp") {
+                useVersion("2.1.10-1.0.30")
+            }
+        }
+    }
 }

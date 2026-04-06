@@ -1,10 +1,18 @@
 package com.example.pokedexlite.presentation.navigation
 
-sealed class Screen(val route: String) {
-    object Login : Screen("login")
-    object Register : Screen("register")
-    object Main : Screen("main")
-    object Detail : Screen("detail/{pokemonName}") {
-        fun createRoute(name: String) = "detail/$name"
-    }
+import kotlinx.serialization.Serializable
+
+@Serializable
+sealed interface Screen {
+    @Serializable
+    data object Login : Screen
+
+    @Serializable
+    data object Register : Screen
+
+    @Serializable
+    data object Main : Screen
+
+    @Serializable
+    data class Detail(val pokemonName: String) : Screen
 }

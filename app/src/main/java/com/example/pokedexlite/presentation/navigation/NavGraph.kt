@@ -1,18 +1,17 @@
 package com.example.pokedexlite.presentation.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
 import com.example.pokedexlite.presentation.auth.LoginScreen
 import com.example.pokedexlite.presentation.auth.RegisterScreen
 import com.example.pokedexlite.presentation.detail.DetailScreen
 import com.example.pokedexlite.presentation.main.MainScreen
+import androidx.navigation.toRoute
 
 @Composable
-fun NavGraph(startDestination: String) {
+fun NavGraph(startDestination: Any) {
     val navController = rememberNavController()
 
     NavHost(
@@ -20,54 +19,49 @@ fun NavGraph(startDestination: String) {
         startDestination = startDestination
     ) {
         // ── Auth ──────────────────────────────────────────────────────────────
-        composable(Screen.Login.route) {
+        composable<Screen.Login> {
             LoginScreen(
                 onNavigateToRegister = {
-                    navController.navigate(Screen.Register.route)
+                    navController.navigate(Screen.Register)
                 },
                 onLoginSuccess = {
-                    navController.navigate(Screen.Main.route) {
-                        popUpTo(Screen.Login.route) { inclusive = true }
+                    navController.navigate(Screen.Main) {
+                        popUpTo(Screen.Login) { inclusive = true }
                     }
                 }
             )
         }
 
-        composable(Screen.Register.route) {
+        composable<Screen.Register> {
             RegisterScreen(
                 onNavigateToLogin = { navController.popBackStack() },
                 onRegisterSuccess = {
-                    navController.navigate(Screen.Main.route) {
-                        popUpTo(Screen.Login.route) { inclusive = true }
+                    navController.navigate(Screen.Main) {
+                        popUpTo(Screen.Login) { inclusive = true }
                     }
                 }
             )
         }
 
         // ── Main (tabbed) ─────────────────────────────────────────────────────
-        composable(Screen.Main.route) {
+        composable<Screen.Main> {
             MainScreen(
                 onPokemonClick = { name ->
-                    navController.navigate(Screen.Detail.createRoute(name))
+                    navController.navigate(Screen.Detail(pokemonName = name))
                 },
                 onLogout = {
-                    navController.navigate(Screen.Login.route) {
-                        popUpTo(Screen.Main.route) { inclusive = true }
+                    navController.navigate(Screen.Login) {
+                        popUpTo(Screen.Main) { inclusive = true }
                     }
                 }
             )
         }
 
         // ── Detail ────────────────────────────────────────────────────────────
-        composable(
-            route = Screen.Detail.route,
-            arguments = listOf(
-                navArgument("pokemonName") { type = NavType.StringType }
-            )
-        ) { backStackEntry ->
-            val name = backStackEntry.arguments?.getString("pokemonName") ?: ""
+        composable<Screen.Detail> { backStackEntry ->
+            val detail = backStackEntry.toRoute<Screen.Detail>()
             DetailScreen(
-                pokemonName = name,
+                pokemonName = detail.pokemonName,
                 onBack = { navController.popBackStack() }
             )
         }
