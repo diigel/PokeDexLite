@@ -2,6 +2,11 @@
 
 PokeDex Lite is a modern, high-performance Android application designed for trainers to explore the Pokémon universe. The project serves as a showcase of **Clean Architecture**, **Domain-Driven Design (DDD)**, and **SOLID Principles** within a reactive **MVVM** environment.
 
+### 📺 Demo Aplikasi
+[![Tonton Video Demo](https://img.youtube.com/vi/xAkAn0mcSic/maxresdefault.jpg)](https://www.youtube.com/watch?v=xAkAn0mcSic)
+
+*(Klik gambar di atas untuk memutar video demo)*
+
 ## 🏗 Architecture & Design Patterns
 
 The project is built on a foundation of **Clean Architecture** and **DDD** to ensure a highly maintainable, testable, and decoupled codebase.
