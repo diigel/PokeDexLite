@@ -69,7 +69,7 @@ The project structure is organized by domain concerns, utilizing:
     The project uses a `key.properties` file in `/Document`. Ensure it contains:
     ```properties
     BASE_URL="https://pokeapi.co/api/v2/"
-    IMAGE_URl="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/"
-    IMAGE_PATH="pokemon/"
+    IMAGE_URl="https://raw.githubusercontent.com/"
+    IMAGE_PATH="PokeAPI/sprites/master/sprites/pokemon/"
     ```
 3.  **Build & Run**: Sync Gradle and run on a device (API 24+).
